@@ -39,12 +39,12 @@ sourcelist()
   #if we get permission denied have to write it with nano
   if [ ! -f /etc/apt/sources.list.d/hp-mcp.list ]; then
 
-  addrepo=$(sudo echo "deb [ signed-by=/etc/apt/trusted.gpg.d/hp-mcp.gpg ] http://downloads.linux.hpe.com/SDR/repo/mcp stretch/>
+  addrepo=$(sudo echo "deb [ signed-by=/etc/apt/trusted.gpg.d/hp-mcp.gpg ] http://downloads.linux.hpe.com/SDR/repo/mcp stretch/current non-free" > /etc/apt/sources.list.d/hp-mcp.list)
 
     if [ $(echo "$addrepo" | grep -i denied) ]; then
       sudo touch /etc/apt/sources.list.d/hp-mcp.list
       printf "\nPlease do: \n sudo nano /etc/apt/sources.list.d/hp-mcp.list and paste the line \n"
-      printf " >> deb [signed by=/etc/apt/trusted.gpg.d/hp-mcp.gpg ] http://downloads.linux.hpe.com/SDR/repo/mcp stretch/curren>
+      printf " >> deb [signed by=/etc/apt/trusted.gpg.d/hp-mcp.gpg ] http://downloads.linux.hpe.com/SDR/repo/mcp stretch/current non-free << \n\n"
       printf "(must be all on one line, without the >> << of course) \n "
       printf "as the script has not been successful it must be done manually \n\n"
     fi
