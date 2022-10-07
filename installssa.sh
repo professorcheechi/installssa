@@ -47,6 +47,7 @@ sourcelist()
       printf " >> deb [signed by=/etc/apt/trusted.gpg.d/hp-mcp.gpg ] http://downloads.linux.hpe.com/SDR/repo/mcp stretch/current non-free << \n\n"
       printf "(must be all on one line, without the >> << of course) \n "
       printf "as the script has not been successful it must be done manually \n\n"
+      printf "Afterward you should be ready to sudo apt update && sudo apt install ssacli -y \n\n" && exit 2
     fi
 
   fi
