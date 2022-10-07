@@ -49,7 +49,9 @@ sourcelist()
       printf "as the script has not been successful it must be done manually \n\n"
       printf "Afterward you should be ready to sudo apt update && sudo apt install ssacli -y \n\n" && exit 2
     fi
-
+  else 
+    printf "/etc/apt/sources.list.d/hp-mcp.list already exists. \n"
+    printf "I am unsure whether it is safe to update so I will exit now \n\n" && exit 1
   fi
 }
 
